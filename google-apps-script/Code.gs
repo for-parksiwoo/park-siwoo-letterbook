@@ -21,6 +21,7 @@ const FIELDS = [
   ['fanmeetingTour', '다음 팬미팅'],
   ['compliment', '최종 보스 질문'],
   ['nicknameChoice', '내가 선택한 시우의 애칭'],
+  ['balanceReason', '밸런스게임 선택 이유'],
   ['toSiwoo', 'To. 시우'],
   ['contentAgreement', '작성 안내 동의'],
   ['privacyAgreement', '개인정보 수집 동의'],
@@ -35,6 +36,7 @@ const MAX_LENGTHS = {
   mySiwoo: 30,
   fanMoment: 30,
   charmPoint: 30,
+  balanceReason: 100,
   toSiwoo: 100
 };
 
@@ -99,7 +101,7 @@ function setupSheet() {
   sheet.setColumnWidths(3, 5, 150);
   sheet.setColumnWidths(8, 3, 220);
   sheet.setColumnWidths(11, 10, 190);
-  sheet.setColumnWidth(21, 360);
+  sheet.setColumnWidths(21, 2, 360);
   sheet.getRange(1, 1, 1, sheet.getLastColumn())
     .setBackground('#724ea0')
     .setFontColor('#ffffff')
@@ -116,7 +118,9 @@ function getResponseSheet_() {
   if (!sheet) sheet = spreadsheet.insertSheet(SHEET_NAME);
   const headers = ['접수 시각'].concat(FIELDS.map(([, label]) => label));
   const current = sheet.getRange(1, 1, 1, headers.length).getValues()[0];
-  if (current.every((value) => !value)) sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
+  if (current.every((value) => !value) || current.join('\u0000') !== headers.join('\u0000')) {
+    sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
+  }
   return sheet;
 }
 
