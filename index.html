@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#faf8fd" />
+    <meta name="description" content="박시우 배우 레터북 제작을 위한 국내 서포터즈 참여 폼" />
+    <title>박시우 · 우리의 레터북</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&amp;family=Noto+Sans+KR:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./config.js" defer></script>
+    <script src="./form.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#letterbook-form">참여 폼으로 바로가기</a>
+    <header class="topbar">
+      <a class="brand" href="./">박시우 · 우리의 레터북</a>
+      <p>국내 서포터즈 참여 폼</p>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">시우에게 전하는 우리의 마음</p>
+          <h1 id="page-title">박시우 배우 레터북 제작을 위한<br />국내 서포터즈 참여 폼</h1>
+          <p class="hero-description">시우를 좋아하게 된 순간부터, 앞으로 만나고 싶은 모습까지.<br />여러분의 한 문장이 모여 시우에게 전할 한 권의 책이 됩니다.</p>
+        </div>
+        <div class="hero-footer">
+          <span>팬들의 마음을 한 페이지씩</span>
+          <strong>For. 시우</strong>
+        </div>
+      </section>
+
+      <section class="notice" aria-labelledby="notice-title">
+        <h2 id="notice-title">참여 전 꼭 읽어 주세요</h2>
+        <ul>
+          <li><strong>모든 서술형 답변은 한글로 작성해 주세요.</strong> 한글이 아닌 답변은 레터북에 포함되지 않을 수 있습니다.</li>
+          <li>트위터/X 아이디와 오픈채팅 닉네임은 확인을 위해 실제 사용 중인 표기 그대로 적어 주세요.</li>
+          <li>레터북에는 실명 대신 아래에 적은 ‘레터북 표기 닉네임’을 사용합니다.</li>
+          <li>짧은 답변은 각각 30자, 마지막 메시지는 100자 이내입니다. 공백과 줄바꿈도 글자 수에 포함됩니다.</li>
+        </ul>
+      </section>
+
+      <nav class="step-nav" aria-label="참여 폼 목차">
+        <a href="#participant">01 참여자 정보</a>
+        <a href="#my-siwoo">02 나의 시우</a>
+        <a href="#balance">03 밸런스게임</a>
+        <a href="#to-siwoo">04 시우에게</a>
+      </nav>
+
+      <form id="letterbook-form" class="letterbook-form" method="post" target="submission-frame" novalidate>
+        <input type="hidden" name="responseId" id="response-id" />
+        <input type="hidden" name="submittedAt" id="submitted-at" />
+        <input type="hidden" name="source" value="github-pages-letterbook" />
+        <div class="honeypot" aria-hidden="true">
+          <label for="website">이 칸은 비워 두세요</label>
+          <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <section class="form-section" id="participant" aria-labelledby="participant-title">
+          <div class="section-heading">
+            <span>01</span>
+            <div><p>Participant</p><h2 id="participant-title">참여자 정보</h2></div>
+          </div>
+          <div class="field-grid">
+            <div class="field">
+              <label for="pen-name">레터북 표기 닉네임 <em>필수</em></label>
+              <p class="field-help">레터북에 실제로 실릴 익명 닉네임입니다.</p>
+              <div class="input-wrap">
+                <input id="pen-name" name="penName" type="text" maxlength="20" autocomplete="nickname" required placeholder="예: 시우의봄" />
+                <span class="counter" data-counter-for="pen-name">0 / 20</span>
+              </div>
+            </div>
+            <div class="field">
+              <label for="x-id">트위터/X 아이디 <em>필수</em></label>
+              <p class="field-help">참여 확인용이며 레터북에는 실리지 않습니다.</p>
+              <input id="x-id" name="xId" type="text" maxlength="50" required placeholder="예: @example" autocapitalize="none" spellcheck="false" />
+            </div>
+          </div>
+          <div class="verification-box">
+            <label class="check-row">
+              <input name="openChatMember" type="checkbox" value="yes" required />
+              <span><strong>국내 서포터즈 오픈채팅방 참여자입니다.</strong><small>오픈채팅방 참여 확인을 위해 반드시 체크해 주세요.</small></span>
+            </label>
+            <div class="field compact-field">
+              <label for="openchat-name">오픈채팅방 닉네임 <em>필수</em></label>
+              <div class="input-wrap">
+                <input id="openchat-name" name="openChatNickname" type="text" maxlength="30" required placeholder="현재 사용 중인 닉네임" />
+                <span class="counter" data-counter-for="openchat-name">0 / 30</span>
+              </div>
+            </div>
+          </div>
+          <div class="privacy-note">입력한 X 아이디와 오픈채팅 닉네임은 참여 확인 및 중복 응답 확인에만 사용합니다. 레터북에는 ‘레터북 표기 닉네임’만 공개됩니다.</div>
+        </section>
+
+        <section class="form-section" id="my-siwoo" aria-labelledby="my-siwoo-title">
+          <div class="section-heading">
+            <span>02</span>
+            <div><p>My Siwoo</p><h2 id="my-siwoo-title">나의 시우</h2></div>
+          </div>
+          <p class="section-guide">짧지만 마음이 또렷하게 전해지는 한 문장으로 적어 주세요.</p>
+          <div class="question-stack">
+            <div class="field question-field">
+              <label for="my-siwoo-answer">나에게 박시우란? <em>필수</em></label>
+              <div class="textarea-wrap"><textarea id="my-siwoo-answer" name="mySiwoo" maxlength="30" rows="2" required placeholder="30자 이내로 적어 주세요"></textarea><span class="counter" data-counter-for="my-siwoo-answer">0 / 30</span></div>
+            </div>
+            <div class="field question-field">
+              <label for="fan-moment">시우에게 입덕한 순간 <em>필수</em></label>
+              <div class="textarea-wrap"><textarea id="fan-moment" name="fanMoment" maxlength="30" rows="2" required placeholder="30자 이내로 적어 주세요"></textarea><span class="counter" data-counter-for="fan-moment">0 / 30</span></div>
+            </div>
+            <div class="field question-field">
+              <label for="charm-point">시우의 매력포인트 <em>필수</em></label>
+              <div class="textarea-wrap"><textarea id="charm-point" name="charmPoint" maxlength="30" rows="2" required placeholder="30자 이내로 적어 주세요"></textarea><span class="counter" data-counter-for="charm-point">0 / 30</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="form-section" id="balance" aria-labelledby="balance-title">
+          <div class="section-heading">
+            <span>03</span>
+            <div><p>Balance Game</p><h2 id="balance-title">팬들은 어떤 박시우를 기다리고 있을까?</h2></div>
+          </div>
+          <p class="section-guide">두 가지 중 더 보고 싶은 모습을 하나씩 선택해 주세요.</p>
+          <div class="balance-list">
+            <fieldset class="balance-card"><legend><span>01</span> 차기작의 시우</legend><div class="choice-pair"><label class="choice"><input type="radio" name="nextRole" value="로맨스 주연" required /><span>차기작 로맨스 주연</span></label><b>VS</b><label class="choice"><input type="radio" name="nextRole" value="장르물 주연" /><span>장르물 주연</span></label></div></fieldset>
+            <fieldset class="balance-card"><legend><span>02</span> 다음 역할의 분위기</legend><div class="choice-pair"><label class="choice"><input type="radio" name="ageRole" value="풋풋한 청춘 역할" required /><span>풋풋한 청춘 역할</span></label><b>VS</b><label class="choice"><input type="radio" name="ageRole" value="완전히 성숙한 역할" /><span>완전히 성숙한 역할</span></label></div></fieldset>
+            <fieldset class="balance-card"><legend><span>03</span> 선과 악</legend><div class="choice-pair"><label class="choice"><input type="radio" name="alignment" value="완전 선역" required /><span>완전 선역</span></label><b>VS</b><label class="choice"><input type="radio" name="alignment" value="매력적인 악역" /><span>매력적인 악역</span></label></div></fieldset>
+            <fieldset class="balance-card"><legend><span>04</span> 캐릭터의 온도</legend><div class="choice-pair"><label class="choice"><input type="radio" name="characterMood" value="말랑하고 다정한 캐릭터" required /><span>말랑하고 다정한 캐릭터</span></label><b>VS</b><label class="choice"><input type="radio" name="characterMood" value="차갑고 예민한 캐릭터" /><span>차갑고 예민한 캐릭터</span></label></div></fieldset>
+            <fieldset class="balance-card"><legend><span>05</span> 작품에서 만나는 방식</legend><div class="choice-pair"><label class="choice"><input type="radio" name="platform" value="웹드라마·OTT에서 자주 만나기" required /><span>웹드라마·OTT에서 자주 만나기</span></label><b>VS</b><label class="choice"><input type="radio" name="platform" value="긴 호흡의 드라마에서 깊게 만나기" /><span>긴 호흡의 드라마에서 깊게 만나기</span></label></div></fieldset>
+            <fieldset class="balance-card"><legend><span>06</span> 작품 밖의 시우</legend><div class="choice-pair"><label class="choice"><input type="radio" name="contentType" value="예능 출연" required /><span>예능 출연</span></label><b>VS</b><label class="choice"><input type="radio" name="contentType" value="배우 브이로그" /><span>배우 브이로그</span></label></div></fieldset>
+            <fieldset class="balance-card"><legend><span>07</span> 팬미팅 무대</legend><div class="choice-pair"><label class="choice"><input type="radio" name="fanmeetingStage" value="팬미팅에서 노래" required /><span>팬미팅에서 노래</span></label><b>VS</b><label class="choice"><input type="radio" name="fanmeetingStage" value="팬미팅에서 춤" /><span>팬미팅에서 춤</span></label></div></fieldset>
+            <fieldset class="balance-card"><legend><span>08</span> 다음 팬미팅</legend><div class="choice-pair"><label class="choice"><input type="radio" name="fanmeetingTour" value="한국 팬미팅 한 번 더" required /><span>한국 팬미팅 한 번 더</span></label><b>VS</b><label class="choice"><input type="radio" name="fanmeetingTour" value="해외 팬미팅 투어" /><span>해외 팬미팅 투어</span></label></div></fieldset>
+            <fieldset class="balance-card final-boss"><legend><span>09</span> 최종 보스 질문</legend><div class="choice-pair"><label class="choice"><input type="radio" name="compliment" value="평생 귀엽다는 말만 듣기" required /><span>평생 귀엽다는 말만 듣기 🐰</span></label><b>VS</b><label class="choice"><input type="radio" name="compliment" value="평생 잘생겼다는 말만 듣기" /><span>평생 잘생겼다는 말만 듣기 😎</span></label></div></fieldset>
+            <fieldset class="balance-card"><legend><span>10</span> 내가 선택한 시우의 애칭</legend><div class="choice-pair"><label class="choice"><input type="radio" name="nicknameChoice" value="오빠" required /><span>오빠</span></label><b>VS</b><label class="choice"><input type="radio" name="nicknameChoice" value="아기" /><span>아기</span></label></div></fieldset>
+          </div>
+        </section>
+
+        <section class="form-section" id="to-siwoo" aria-labelledby="to-siwoo-title">
+          <div class="section-heading">
+            <span>04</span>
+            <div><p>To. Siwoo</p><h2 id="to-siwoo-title">시우에게</h2></div>
+          </div>
+          <div class="field question-field final-message">
+            <label for="to-siwoo-message">To. 시우 <em>필수</em></label>
+            <p class="field-help">레터북의 마지막을 채울 따뜻한 메시지를 남겨 주세요.</p>
+            <div class="textarea-wrap"><textarea id="to-siwoo-message" name="toSiwoo" maxlength="100" rows="6" required placeholder="100자 이내로 마음을 전해 주세요"></textarea><span class="counter" data-counter-for="to-siwoo-message">0 / 100</span></div>
+          </div>
+          <div class="safety-notice">
+            <strong>서로를 존중하는 마음으로 작성해 주세요.</strong>
+            <p>아티스트 또는 타인을 향한 욕설·비방·조롱, 성적 표현, 개인정보 노출, 팬덤 간 갈등을 유발하는 내용은 작성할 수 없습니다. 운영진 검토 후 부적절한 답변은 레터북 수록 대상에서 제외될 수 있습니다.</p>
+          </div>
+          <div class="agreement-list">
+            <label class="check-row"><input name="contentAgreement" type="checkbox" value="yes" required /><span>위 작성 안내를 확인했으며, 존중과 응원의 마음을 담아 작성했습니다.</span></label>
+            <label class="check-row"><input name="privacyAgreement" type="checkbox" value="yes" required /><span>참여 확인을 위한 닉네임 및 X 아이디 수집·이용에 동의합니다.</span></label>
+          </div>
+          <div class="submit-panel">
+            <p>작성한 내용을 한 번 더 확인해 주세요. 제출 후에는 직접 수정하기 어렵습니다.</p>
+            <button class="submit-button" type="submit"><span>시우에게 마음 보내기</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" /></svg></button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </div>
+        </section>
+      </form>
+      <iframe class="submission-frame" name="submission-frame" title="폼 제출 처리"></iframe>
+    </main>
+
+    <footer><p>박시우 · 우리의 레터북</p><span>For. 시우</span></footer>
+  </body>
+</html>
