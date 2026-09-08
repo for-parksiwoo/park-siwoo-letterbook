@@ -12,16 +12,25 @@ const FIELDS = [
   ['fanMoment', '시우에게 입덕한 순간'],
   ['charmPoint', '시우의 매력포인트'],
   ['nextRole', '차기작의 시우'],
+  ['nextRoleReason', '차기작의 시우 · 선택 이유'],
   ['ageRole', '다음 역할의 분위기'],
+  ['ageRoleReason', '다음 역할의 분위기 · 선택 이유'],
   ['alignment', '선과 악'],
+  ['alignmentReason', '선과 악 · 선택 이유'],
   ['characterMood', '캐릭터의 온도'],
+  ['characterMoodReason', '캐릭터의 온도 · 선택 이유'],
   ['platform', '작품에서 만나는 방식'],
+  ['platformReason', '작품에서 만나는 방식 · 선택 이유'],
   ['contentType', '작품 밖의 시우'],
+  ['contentTypeReason', '작품 밖의 시우 · 선택 이유'],
   ['fanmeetingStage', '팬미팅 무대'],
+  ['fanmeetingStageReason', '팬미팅 무대 · 선택 이유'],
   ['fanmeetingTour', '다음 팬미팅'],
+  ['fanmeetingTourReason', '다음 팬미팅 · 선택 이유'],
   ['compliment', '최종 보스 질문'],
+  ['complimentReason', '최종 보스 질문 · 선택 이유'],
   ['nicknameChoice', '내가 선택한 시우의 애칭'],
-  ['balanceReason', '밸런스게임 선택 이유'],
+  ['nicknameChoiceReason', '내가 선택한 시우의 애칭 · 선택 이유'],
   ['toSiwoo', 'To. 시우'],
   ['contentAgreement', '작성 안내 동의'],
   ['privacyAgreement', '개인정보 수집 동의'],
@@ -36,7 +45,16 @@ const MAX_LENGTHS = {
   mySiwoo: 30,
   fanMoment: 30,
   charmPoint: 30,
-  balanceReason: 100,
+  nextRoleReason: 30,
+  ageRoleReason: 30,
+  alignmentReason: 30,
+  characterMoodReason: 30,
+  platformReason: 30,
+  contentTypeReason: 30,
+  fanmeetingStageReason: 30,
+  fanmeetingTourReason: 30,
+  complimentReason: 30,
+  nicknameChoiceReason: 30,
   toSiwoo: 100
 };
 
@@ -100,8 +118,8 @@ function setupSheet() {
   sheet.setColumnWidth(2, 240);
   sheet.setColumnWidths(3, 5, 150);
   sheet.setColumnWidths(8, 3, 220);
-  sheet.setColumnWidths(11, 10, 190);
-  sheet.setColumnWidths(21, 2, 360);
+  sheet.setColumnWidths(11, 20, 210);
+  sheet.setColumnWidth(31, 360);
   sheet.getRange(1, 1, 1, sheet.getLastColumn())
     .setBackground('#724ea0')
     .setFontColor('#ffffff')
